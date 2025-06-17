@@ -32,3 +32,22 @@ pip install hologram
 
 # Run webcam demo
 hologram-demo
+
+### Instructions to Run in ModelSim:
+1.Compile:
+
+bash
+vlog HoloGram.v tb_HoloGram.v
+
+2. Simulate:
+bash
+vsim tb_HoloGram
+
+3. Add signals to waveform:
+tcl
+add wave -position insertpoint sim:/tb_HoloGram/*
+run 100ns
+4.  For GTKWave
+bash
+vvp a.out
+gtkwave HoloGram.vcd
